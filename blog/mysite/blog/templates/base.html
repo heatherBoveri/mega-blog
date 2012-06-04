@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blog</title>
+		<style type="text/css">
+		h1{
+			padding:10px;
+			border-top: 5px solid grey;
+			border-left: 5px solid grey;
+			border-right: 5px solid grey;
+			background-color: black;
+			width:40%;
+			text-align: center;
+			margin-left:auto;
+			margin-right:auto;
+			margin-bottom: 0px;
+		}
+		a:visited {
+			color: grey;
+		}
+		a:link {
+			color: blue;
+		}
+		body {
+			line-height: 1.5em;
+			font-family: Georgia, Times, "Times New Roman", serif;
+			background-image:url('/static/megaman.jpg');
+			background-size: 100%;
+			background-attachment: fixed;
+			color: white;
+		}
+		ul.navbar {
+			text-align:center;
+			margin-top:0px;
+			padding:10px;
+			border-bottom: 5px solid grey;
+			border-left: 5px solid grey;
+			border-right: 5px solid grey;
+			background-color: black;
+			width:40%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		ul.navbar li {
+			text-align: center;
+			display: inline;
+		}
+		</style>
+	</head>
+<h1>Mega Blog</h1>
+
+<ul class="navbar">
+<li><a href="/blog/">Home</a></li>
+<li><a href="/blog/archives/">Archives</a></li>
+<li><a href="/blog/feed/">Feed</a></li>
+<li><a href="/blog/tags/">Tags</a></li>
+</ul>
+
+{% block content %}
+
+{% endblock %}
+</html>

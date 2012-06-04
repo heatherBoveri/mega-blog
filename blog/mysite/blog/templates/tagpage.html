@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blog</title>
+		<style type="text/css">
+		h2 {
+			text-align:center;
+			padding:10px;
+			border-left:5px solid grey;
+			border-right:5px solid grey;
+			border-top:5px solid grey;
+			margin:0px;
+			background-color: black;
+			margin-left:auto;
+			margin-right:auto;
+			width:25%;
+			font-size: 200%;}
+		ul.taggedposts {
+			text-align:center;
+			padding:10px;
+			border-left:5px solid grey;
+			border-right:5px solid grey;
+			border-bottom:5px solid grey;
+			margin:0px;
+			background-color: black;
+			margin-left:auto;
+			margin-right:auto;
+			width:25%;
+			line-height: .5em;}
+		</style>
+	</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Posts tagged: {{tag}}</h2>
+
+<ul class="taggedposts">
+{% for post in posts %}
+
+<p>{{ post.created|date:"Y-m-d" }}: <a href="/blog/{{post.id}}">{{ post.title }}</a></p>
+
+{% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>
