@@ -44,7 +44,7 @@
 	</head>	
 <body>
 {% extends "base.html" %}
-
+{% load comments %}
 {% block content %}
 
 <h2><a href="/blog/{{post.id}}">{{ post.title }}</a></h2>
@@ -58,6 +58,9 @@
 	<a href="/blog/tag/{{tag}}">{{tag}}</a>
 	{% if not forloop.last %}, {% endif %}
 	{% endfor %}
+	{% get_comment_count for post as comment_count %}
+	<a>{{ coment_count }} comments.</a>
+	{% render_comment_form for post %}
 	{{ post.created }}
 </div>
 

@@ -34,4 +34,5 @@ urlpatterns = patterns('blog.views',
 	url(r'^tags/$', ListView.as_view(
 							queryset=Post.tags.all().order_by("taggit_taggeditem_items"),
 							template_name="tags.html")),
+	(r'^comments/', include('django.contrib.comments.urls')),
 )
